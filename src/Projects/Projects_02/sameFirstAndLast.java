@@ -48,8 +48,6 @@ public class sameFirstAndLast {
             System.out.println("false");
         }
 
-
     }
-
 
 }

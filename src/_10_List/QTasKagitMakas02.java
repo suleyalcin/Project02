@@ -31,33 +31,57 @@ public class QTasKagitMakas02 {
         System.out.println(">== Tas Kagit Makas Oyununa Hosgeldiniz");
         System.out.println("Tas icin 1 / Kagit icin 2 /  Makas icin 3 giriniz");
 
-while (true){
-    secim=scan.nextInt();
-    pcSecim=(int) (Math.random()*3);
-    if(secim==1){
-        if(pcSecim==1){
-            System.out.println("Pcnin Secimi : Tas ;Sonuc:BERABERE");
-            System.out.println("Puaniniz : "+kulPuan+
-                    "Pc nin Puani : "+pcPuan +" Oyunu Bitirmek Istiyorsaniz 0 giriniz");
-        }else if (pcSecim==2) {
-            System.out.println("Pcnin Secimi : Kagit ;Sonuc:KAYBETTINIZ");
-            System.out.println("Puaniniz : " + kulPuan +
-                    "Pc nin Puani : " + pcPuan + " Oyunu Bitirmek Istiyorsaniz 0 giriniz");
-        }else{
-                System.out.println("Pcnin Secimi : Makas ;Sonuc:KAYBETTINIZ");
-                System.out.println("Puaniniz : "+kulPuan+
-                        "Pc nin Puani : "+pcPuan +" Oyunu Bitirmek Istiyorsaniz 0 giriniz");
+        while (true) {
+            secim = scan.nextInt();
+            pcSecim = (int) (Math.random() * 3);
+            if (secim == 0) {
+                System.out.println("Tesekkur ederiz yine bekleriz");
+                break;
             }
-    }
-}
+            if (secim == 1) {
+                if (pcSecim == 1) {
+                    System.out.println("Pc nin Secimi:Tas  Sonuc:Berabere");
+                    System.out.println("Puaniniz: " + kulPuan + " Pc nin Puani: " + pcPuan + " Oyunu Bitirmek Istiyorsaniz 0 giriniz");
+                } else if (pcSecim == 2) {
+                    System.out.println("Pc nin Secimi:Kagit  Sonuc:Kaybettiniz");
+                    pcPuan++;
+                    System.out.println("Puaniniz: " + kulPuan + " Pc nin Puani: " + pcPuan + " Oyunu Bitirmek Istiyorsaniz 0 giriniz");
+                } else {
+                    System.out.println("Pc nin Secimi:Makas  Sonuc:Kazandiniz");
+                    kulPuan++;
+                    System.out.println("Puaniniz: " + kulPuan + " Pc nin Puani: " + pcPuan + " Oyunu Bitirmek Istiyorsaniz 0 giriniz");
+                }
+            } else if (secim == 2) {
+                if (pcSecim == 1) {
+                    System.out.println("Pc nin Secimi:Tas  Sonuc:kazandiniz");
+                    kulPuan++;
+                    System.out.println("Puaniniz: " + kulPuan + " Pc nin Puani: " + pcPuan + " Oyunu Bitirmek Istiyorsaniz 0 giriniz");
+                } else if (pcSecim == 2) {
+                    System.out.println("Pc nin Secimi:Kagit  Sonuc:Berabere");
+                    System.out.println("Puaniniz: " + kulPuan + " Pc nin Puani: " + pcPuan + " Oyunu Bitirmek Istiyorsaniz 0 giriniz");
+                } else {
+                    System.out.println("Pc nin Secimi:Makas  Sonuc:Kaybettiniz");
+                    pcPuan++;
+                    System.out.println("Puaniniz: " + kulPuan + " Pc nin Puani: " + pcPuan + " Oyunu Bitirmek Istiyorsaniz 0 giriniz");
+                }
+            } else if (secim == 3) {
+                if (pcSecim == 1) {
+                    System.out.println("Pc nin Secimi:Tas  Sonuc:kaybettiniz");
+                    pcPuan++;
+                    System.out.println("Puaniniz: " + kulPuan + " Pc nin Puani: " + pcPuan + " Oyunu Bitirmek Istiyorsaniz 0 giriniz");
+                } else if (pcSecim == 2) {
+                    System.out.println("Pc nin Secimi:Kagit  Sonuc:Kazandiniz");
+                    kulPuan++;
+                    System.out.println("Puaniniz: " + kulPuan + " Pc nin Puani: " + pcPuan + " Oyunu Bitirmek Istiyorsaniz 0 giriniz");
+                } else {
+                    System.out.println("Pc nin Secimi:Makas  Sonuc:Berabere");
+                    System.out.println("Puaniniz: " + kulPuan + " Pc nin Puani: " + pcPuan + " Oyunu Bitirmek Istiyorsaniz 0 giriniz");
+                }
+            } else {
+                System.out.println("Hatali giris");
 
-
-
-
-
-
-
-
+            }
+        }
 }//main
 
 }
