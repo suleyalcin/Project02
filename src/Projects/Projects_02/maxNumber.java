@@ -38,7 +38,6 @@ public class maxNumber {
             }
 
         }
-
         System.out.println(max);
 
     }

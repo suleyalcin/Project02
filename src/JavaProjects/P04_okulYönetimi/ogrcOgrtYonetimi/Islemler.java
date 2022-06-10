@@ -67,10 +67,11 @@ public class Islemler {
                 islemMenusu();
                 break;
             case 3:
-               // listele();
+                listeyap();
                 islemMenusu();
                 break;
             case 4:
+                silme();
                 islemMenusu();
                 break;
             case 0:
@@ -85,51 +86,142 @@ public class Islemler {
 
     }
 
+
+    //******************//
+    private static void silme() {
+        System.out.println("   ***   " + kisiTuru + "  silme sayfası   ***");
+        System.out.println("");
+
+        System.out.print("kimlik No giriniz : ");
+        String kimlikNo = scan.next();
+        if (kisiTuru.equals("OGRENCI")) {
+            for (Kisi each : ogrncListesi
+            ) {
+                if (each.getKimlikNo().equals(kimlikNo)) {
+                    ogrncListesi.remove(each);
+                    System.out.println("Silindi");
+                    break;
+                } else System.out.println("Boyle biri bulunamadigindan silinemedi");
+
+            }//ogrenciyse bodysi
+
+        }   //ogretmense
+
+        System.out.print("kimlik No giriniz : ");
+
+        if (kisiTuru.equals("OGRETMEN")) {
+            for (Kisi each : ogrtmListesi
+            ) {
+                if (each.getKimlikNo().equals(kimlikNo)) {
+                    ogrtmListesi.remove(each);
+                    System.out.println("Silindi");
+                    break;
+                } else System.out.println("Boyle biri bulunamadigindan silinemedi");
+
+            }//ogretmense bodysi
+        }
+
+
+    }//silme metod bodysi
+
+    ///*******************************///
+    private static void listeyap() {
+
+        System.out.println("   ***   " + kisiTuru + " listeleme sayfası   ***");
+        System.out.println("");
+
+        if (kisiTuru.equals("OGRENCI")) {
+            for (Kisi each : ogrncListesi) {
+                System.out.println(each.toString());
+            }
+        } else {//ogretmense
+            for (Kisi each : ogrtmListesi
+            ) {
+                System.out.println(each.toString());
+
+            }
+
+
+        }//ogretmense bodysi
+
+
+    }//listeyap metodunun bodysi
+
+
+    ////********///
     private static void arama() {
 
+        System.out.println("***" + kisiTuru + " arama sayfasi ");
+        System.out.println("");//dummy hayalet komut ust uste sout yan yana olmasin diye
+
+        System.out.print("kimlik No giriniz : ");
+        String kimlikNo = scan.next();
+
+        if (kisiTuru.equals("OGRENCI")) {//ogrenciyse
+            for (Kisi each : ogrncListesi
+            ) {
+                if (each.getKimlikNo().equals(kimlikNo)) {
+                    System.out.println(each.toString());
+                } else
+                    System.out.println("Kayit bulunamadi");
 
 
+            }
+
+
+        } else { //ogretmense
+            for (Kisi each : ogrtmListesi
+            ) {
+                if (each.getKimlikNo().equals(kimlikNo)) {
+                    System.out.println(each.toString());
+                } else
+                    System.out.println("Kayit bulunamadi");
+
+
+            }//icteki ifin suslusu
+        }//ogretmense else suslusu
 
     }//arama metodu suslusu
 
+
     //***** islem menusundeki EKLEME metodu**************
-            private static void ekle () {
-                System.out.println("   ***   " + kisiTuru + " ekleme sayfası   ***");
-                System.out.print("ad soyad giriniz : ");
-                String adSoyad = scan.nextLine();
-                scan.nextLine();//dummy hayalet komut
+    private static void ekle() {
+        System.out.println("   ***   " + kisiTuru + " ekleme sayfası   ***");
+        System.out.print("ad soyad giriniz : ");
+        scan.nextLine();//dummy hayalet komut
+        String adSoyad = scan.nextLine();
+
+        System.out.print("kimlik No giriniz : ");
+        String kimlikNo = scan.next();
+
+        System.out.print("yas giriniz : ");
+        int yas = scan.nextInt();//ASIL AYRIM BURADAN SONRA BASLIYOR OGRENCIYSE OGRETMENSE YUKARIDAKILER ATADAN GELDI ORTAK
+
+        if (kisiTuru.equals("OGRENCI")) {
+            System.out.print("ogrenci No giriniz : ");
+            String ogrcNo = scan.next();
+            scan.nextLine();//dummy hayalet komut ARDISIK sCANNER CLASSLARI BITISIK YAZDIRMASIN DIYE
+
+            System.out.print("sınıf giriniz : ");
+            String sınıf = scan.next();
+
+            Ogrenci sefilOgrenci = new Ogrenci(adSoyad, kimlikNo, yas, ogrcNo, sınıf);//p'li cons ogrc obj create edildi
+            ogrncListesi.add(sefilOgrenci);
+        } else {//OGRETMENSE
+            System.out.print("sicil No giriniz : ");
+            String sicilNo = scan.nextLine();
+            System.out.print("bolum giriniz : ");
+            String bolum = scan.nextLine();
+
+            Ogretmen muhtesemOgretmen = new Ogretmen(adSoyad, kimlikNo, yas, sicilNo, bolum);//p'li cons ogrtm obj create edildi
+            ogrtmListesi.add(muhtesemOgretmen);
+        }//ekle metodunun else suslusu
+
+    }//ekle metodu suslusu
+    //**************************EKLE bitti***************************
 
 
-                System.out.print("kimlik No giriniz : ");
-                String kimlikNo = scan.next();
-
-                System.out.print("yas giriniz : ");
-                int yas = scan.nextInt();//ASIL AYRIM BURADAN SONRA BASLIYOR OGRENCIYSE OGRETMENSE YUKARIDAKILER ATADAN GELDI ORTAK
-
-                if (kisiTuru.equals("OGRENCI")) {
-                    System.out.print("ogrenci No giriniz : ");
-                    String ogrcNo = scan.next();
-                    scan.nextLine();//dummy hayalet komut ARDISIK sCANNER CLASSLARI BITISIK YAZDIRMASIN DIYE
-
-                    System.out.print("sınıf giriniz : ");
-                    String sınıf = scan.next();
-
-                    Ogrenci sefilOgrenci = new Ogrenci(adSoyad, kimlikNo, yas, ogrcNo, sınıf);//p'li cons ogrc obj create edildi
-                    ogrncListesi.add(sefilOgrenci);
-                } else {//OGRETMENSE
-                    System.out.print("sicil No giriniz : ");
-                    String sicilNo = scan.nextLine();
-                    System.out.print("bolum giriniz : ");
-                    String bolum = scan.nextLine();
-
-                    Ogretmen muhtesemOgretmen = new Ogretmen(adSoyad, kimlikNo, yas, sicilNo, bolum);//p'li cons ogrtm obj create edildi
-                    ogrtmListesi.add(muhtesemOgretmen);
-                }//ekle metodunun else suslusu
-
-            }//ekle metodu suslusu
-            //**************************EKLE bitti******************************
-
-        }//class
+}//class
 
 
 

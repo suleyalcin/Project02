@@ -22,24 +22,26 @@ public class minNumber {
      */
 
 
-
-
     public static void main(String[] args) {
-        int[][] i1 = new int[][]{{1,2,3}, {2,3,1} , {5,5,5} , {2,1,3}};
 
-        int min = 1 ;
-        for( int i = 0 ; i < i1.length ; i++){
-            for(int j =0 ; j< i1[i].length ; j++){
 
-                if(i1[i][j] < min){
-                    min = i1[i][j];
+    int arr[][] = new int[][]{{2, 3}, {2, 3}, {5, 5, 5}, {2, 3}};
+        System.out.println(minDegerBulMetodu(arr));
+
+
+}//main
+
+
+    private static int minDegerBulMetodu(int[][] arr) {
+        int min=arr[0][0];
+        for(int i=0; i<arr.length; i++) {
+            for(int j=0; j<arr[i].length; j++) {
+                if(arr[i][j]<min){
+                    min=arr[i][j];
                 }
             }
-
         }
-
-        System.out.println(min);
-
+        return min;
 
 }
 

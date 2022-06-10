@@ -10,16 +10,16 @@ public class Kisi {
     }
 
     public Kisi(String adSoyad, String kimlikNo, int yas) {
-        setAdSoyad(adSoyad);
+        setadSoyad(adSoyad);
         this.kimlikNo = kimlikNo;
         setYas(yas);
     }
 
-    public String getAdSoyad() {
+    public String getadSoyad() {
         return adSoyad;
     }
 
-    public void setAdSoyad(String adSoyad) {
+    public void setadSoyad(String adSoyad) {
         this.adSoyad = adSoyad.toUpperCase();
     }
 

@@ -6,13 +6,13 @@ public class Practıce_001 {
     public static void main(String[] args) {
         /* TASK :
          * Kullanicidan alacaginiz iki sayiyi yine kullaniciya sectireceginiz
-         *  dort islemden biri ile isleme koyup sonucun yazdiriniz
+         *  dort islemden biri ile isleme koyup sonucunu yazdiriniz
          */
 
         Scanner scan = new Scanner(System.in);//kullanıcıdan input almak için canner obj create ettik.
         System.out.println(" toplama için 1\n çikarma için 2\n bolme için 3\n çarpma için 4");
-        //kullanıcıya seçim içn işlem menusu yazdırdık
-        System.out.println("lütfen iki tam sayı giriniz : ");//kullanıcıya bildirmde bulunuldu.
+        //kullanıcıya seçim için işlem menusu yazdırdık
+        System.out.println("lütfen iki tam sayı giriniz : ");//kullanıcıya bildirimde bulunuldu.
         int islem = scan.nextInt();
         double num1 = scan.nextDouble();//1 sayı assign edildi
         double num2 = scan.nextDouble();//2 sayı assign edildi

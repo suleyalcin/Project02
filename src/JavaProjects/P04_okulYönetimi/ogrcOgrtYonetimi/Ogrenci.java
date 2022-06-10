@@ -8,6 +8,11 @@ public class Ogrenci extends Kisi{
 
     }
 
+    public Ogrenci(String ogrcNo, String sınıf) {
+        this.ogrcNo = ogrcNo;
+        this.sınıf = sınıf;
+    }
+
     public Ogrenci(String adSoyad, String kimlikNo, int yas, String ogrcNo, String sınıf) {
         super(adSoyad, kimlikNo, yas);
         this.ogrcNo = ogrcNo;
@@ -26,16 +31,16 @@ public class Ogrenci extends Kisi{
         return sınıf;
     }
 
-    public void setSınıf(String sınıf) {
-        this.sınıf = sınıf;
-    }
+
 
     @Override
     public String toString() {
         return "Ogrenci{" +
-                "ogrcNo='" + ogrcNo + '\'' +
+                " adSoyad=" + getadSoyad() + '\'' +
+                ", kimlikNo='" + getKimlikNo() + '\'' +
+                ", yas=" + getYas() +
+                ", ogrcNo='" + ogrcNo + '\'' +
                 ", sınıf='" + sınıf + '\'' +
                 '}';
     }
 }
-

@@ -16,6 +16,18 @@ public class Q08 {
          * INPUT : String[] isimler={"Umit","Emin","Kemal","Kerem","Taylan","Orhan","Sinan","Furkan","Ahmet","Ali"};
          * OUTPUT : String[] isimler={"Umit","Emin","Furkan","Kerem","Taylan","Orhan","Sinan","Kemal","Ahmet","Ali"};
          */
+        String[] isimler={"Umit","Emin","Kemal","Kerem","Taylan","Orhan","Sinan","Furkan","Ahmet","Ali"};
+
+        List<String>list=new ArrayList<>();
+        for(int i=0; i<isimler.length; i++){
+            list.add(isimler[i]);
+        }
+        System.out.println(list);
+        String degisen1=  list.get(2);
+        String degisen2=list.get(7);
+        list.set(2,degisen2);
+        list.set(7,degisen1);
+        System.out.println(list);
 
 
     }
